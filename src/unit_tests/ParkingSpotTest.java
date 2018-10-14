@@ -194,8 +194,140 @@ public class ParkingSpotTest {
 
 
 	@Test
-	public void testRemoveAssignedUser() {
-		fail("Not yet implemented");
+	public void testRemoveAssignedUser_001_FIU() {
+		
+		// ParkingUser Test Data
+		String testName = "Jane Doe";
+		String testPid = "1234567";
+				
+		// ParkingSpot Test Data:
+		int parkingSpot = 248742;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "102";
+		String direction = "North";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		FiuParkingUser fpuMock = Mockito.mock(FiuParkingUser.class);
+		Mockito.when(fpuMock.getName()).thenReturn(testName);
+		Mockito.when(fpuMock.getUserID()).thenReturn(testPid);
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		psTest.removeAssignedUser();
+		
+		// Assert:
+		assertEquals(null, psTest.getUser());
+	}
+	
+	@Test
+	public void testRemoveAssignedUser_002_Faculty() {
+		
+		// FacultyUser Test Data
+		String testName = "Ron Swanson";
+		String testPid = "2547687";
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 248742;
+		String parkingType = "Faculty";
+		int floor = 2;
+		String parkingNumber = "242";
+		String direction = "South";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		FacultyUser fpuMock = Mockito.mock(FacultyUser.class);
+		Mockito.when(fpuMock.getName()).thenReturn(testName);
+		Mockito.when(fpuMock.getUserID()).thenReturn(testPid);
+		Mockito.when(fpuMock.toString()).thenReturn("Faculty");
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		psTest.removeAssignedUser();
+		
+		// Assert:
+		assertEquals(null, psTest.getUser());
+	}
+	
+	@Test
+	public void testRemoveAssignedUser_003_Guest() {
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 4256555;
+		String parkingType = "Guest";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		GuestUser fpuMock = Mockito.mock(GuestUser.class);
+		Mockito.when(fpuMock.toString()).thenReturn("Guest");
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		psTest.removeAssignedUser();
+		
+		// Assert:
+		assertEquals(null, psTest.getUser());
+	}
+	
+	@Test
+	public void testRemoveAssignedUser_004_Handicapped() {
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Handicapped";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		HandicappedUser fpuMock = Mockito.mock(HandicappedUser.class);
+		Mockito.when(fpuMock.toString()).thenReturn("Handicapped");
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		psTest.removeAssignedUser();
+		
+		// Assert:
+		assertEquals(null, psTest.getUser());
+	}
+
+	@Test
+	public void testRemoveAssignedUser_005_Student() {
+		
+		// StudentUser Test Data
+		String testName = "Bart Simpson";
+		String testPid = "8745654";
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		StudentUser fpuMock = Mockito.mock(StudentUser.class);
+		Mockito.when(fpuMock.getName()).thenReturn(testName);
+		Mockito.when(fpuMock.getUserID()).thenReturn(testPid);
+		Mockito.when(fpuMock.toString()).thenReturn("Student");
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		psTest.removeAssignedUser();
+		
+		// Assert:
+		assertEquals(null, psTest.getUser());
 	}
 
 	@Test
