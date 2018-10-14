@@ -45,7 +45,7 @@ public class ParkingSpotTest {
 	}
 
 	@Test
-	public void testAssignParkingSpot_001_FIU() {
+	public void UT_PS_APS001() {
 		
 		// ParkingUser Test Data
 		String testName = "Jane Doe";
@@ -76,7 +76,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testAssignParkingSpot_002_Faculty() {
+	public void UT_PS_APS002() {
 		
 		// FacultyUser Test Data
 		String testName = "Ron Swanson";
@@ -109,7 +109,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testAssignParkingSpot_003_Guest() {
+	public void UT_PS_APS003() {
 		
 		// ParkingSpot Test Data:
 		int parkingSpot = 4256555;
@@ -134,7 +134,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testAssignParkingSpot_004_Handicapped() {
+	public void UT_PS_APS004() {
 		
 		// ParkingSpot Test Data:
 		int parkingSpot = 5050566;
@@ -160,7 +160,7 @@ public class ParkingSpotTest {
 
 
 	@Test
-	public void testAssignParkingSpot_005_Student() {
+	public void UT_PS_APS005() {
 		
 		// StudentUser Test Data
 		String testName = "Bart Simpson";
@@ -168,7 +168,7 @@ public class ParkingSpotTest {
 		
 		// ParkingSpot Test Data:
 		int parkingSpot = 5050566;
-		String parkingType = "Handicapped";
+		String parkingType = "Student";
 		int floor = 1;
 		String parkingNumber = "150";
 		String direction = "West";
