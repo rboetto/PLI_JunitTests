@@ -375,28 +375,6 @@ public class ParkingSpotTest {
 		// Assert:
 		assertEquals(pWriterMock, psTest.getPrintWriter());
 	}
-
-	@Test
-	public void UT_PS_SPW002() {
-		
-		// ParkingSpot Test Data:
-		int parkingSpot = 5050566;
-		String parkingType = "Student";
-		int floor = 1;
-		String parkingNumber = "150";
-		String direction = "West";
-		
-		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
-		
-		// Preconditions:
-		PrintWriter pWriterMock = Mockito.mock(PrintWriter.class);
-		
-		// Execute:
-		
-		// Assert:
-		assertEquals(null, psTest.getPrintWriter());
-
-	}
 	
 	@Test
 	public void testGetDirections() {
