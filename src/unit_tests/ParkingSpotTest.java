@@ -1,6 +1,5 @@
 package unit_tests;
 
-
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.lang.reflect.Field;
@@ -194,7 +193,7 @@ public class ParkingSpotTest {
 
 
 	@Test
-	public void testRemoveAssignedUser_001_FIU() {
+	public void UT_PS_RAU001() {
 		
 		// ParkingUser Test Data
 		String testName = "Jane Doe";
@@ -223,7 +222,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testRemoveAssignedUser_002_Faculty() {
+	public void UT_PS_RAU002() {
 		
 		// FacultyUser Test Data
 		String testName = "Ron Swanson";
@@ -253,7 +252,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testRemoveAssignedUser_003_Guest() {
+	public void UT_PS_RAU003() {
 		
 		// ParkingSpot Test Data:
 		int parkingSpot = 4256555;
@@ -277,7 +276,7 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testRemoveAssignedUser_004_Handicapped() {
+	public void UT_PS_RAU004() {
 		
 		// ParkingSpot Test Data:
 		int parkingSpot = 5050566;
@@ -301,7 +300,7 @@ public class ParkingSpotTest {
 	}
 
 	@Test
-	public void testRemoveAssignedUser_005_Student() {
+	public void UT_PS_RAU005() {
 		
 		// StudentUser Test Data
 		String testName = "Bart Simpson";
@@ -391,5 +390,4 @@ public class ParkingSpotTest {
 	public void testGetParkingType() {
 		fail("Not yet implemented");
 	}
-
 }
