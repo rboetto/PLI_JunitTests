@@ -39,8 +39,26 @@ public class ParkingSpotTest {
 	}
 
 	@Test
-	public void testParkingSpot() {
-		fail("Not yet implemented");
+	public void UT_PS_PS001() {
+		
+		// Preconditions
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+				
+		// Execute:
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+				
+		// Assert:
+		assertEquals(parkingSpot, psTest.getParkingSpot());
+		assertEquals(parkingType, psTest.getParkingType());
+		assertEquals(floor, psTest.getFloor());
+		assertEquals(parkingNumber, psTest.getParkingNumber());
+		assertEquals(direction, psTest.getDirections());
+		
 	}
 
 	@Test
@@ -330,28 +348,116 @@ public class ParkingSpotTest {
 	}
 
 	@Test
-	public void testGetUser() {
-		fail("Not yet implemented");
+	public void UT_PS_GU001() {
+		
+		// StudentUser Test Data
+		String testName = "Bart Simpson";
+		String testPid = "8745654";
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+			
+		// Preconditions:
+		StudentUser fpuMock = Mockito.mock(StudentUser.class);
+		Mockito.when(fpuMock.getName()).thenReturn(testName);
+		Mockito.when(fpuMock.getUserID()).thenReturn(testPid);
+		Mockito.when(fpuMock.toString()).thenReturn("Student");
+		psTest.assignParkingSpot(fpuMock);
+		
+		// Execute:
+		StudentUser studentUser = (StudentUser) psTest.getUser();
+		
+		// Assert:
+		assertEquals(testName, studentUser.getName());
+		assertEquals(testPid, studentUser.getUserID());
+		
 	}
 
 	@Test
-	public void testGetParkingSpot() {
-		fail("Not yet implemented");
+	public void UT_PS_GPS001() {
+		
+		//Preconditions
+		// StudentUser Test Data
+		String testName = "Bart Simpson";
+		String testPid = "8745654";
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+		
+		// Assert:
+		assertEquals(parkingSpot, psTest.getParkingSpot());
+		
 	}
 
 	@Test
-	public void testGetParkingNumber() {
-		fail("Not yet implemented");
+	public void UT_PS_GPN001() {
+		
+		//Preconditions
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+		
+		// Assert:
+		assertEquals(parkingNumber, psTest.getParkingNumber());
+		
 	}
 
 	@Test
-	public void testGetFloor() {
-		fail("Not yet implemented");
+	public void UT_PS_GF001() {
+		
+		//Preconditions	
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+		
+		// Assert:
+		assertEquals(floor, psTest.getFloor());
+		
 	}
 
 	@Test
-	public void testGetPrintWriter() {
-		fail("Not yet implemented");
+	public void UT_PS_GPW001() {
+		
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+		
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+		
+		// Preconditions:
+		PrintWriter pWriterMock = Mockito.mock(PrintWriter.class);
+		psTest.setPrintWriter(pWriterMock);
+		
+		// Execute:
+		PrintWriter pWriterGet = psTest.getPrintWriter();
+		
+		// Assert:
+		assertEquals(pWriterMock.toString(), pWriterGet.toString());
 	}
 
 	@Test
@@ -377,12 +483,28 @@ public class ParkingSpotTest {
 	}
 	
 	@Test
-	public void testGetDirections() {
-		fail("Not yet implemented");
+	public void UT_PS_GD001() {
+		
+		// Preconditions
+		// ParkingSpot Test Data:
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+				
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);	
+				
+		// Execute:
+		String getDirection = psTest.getDirections();
+				
+		// Assert:
+		assertEquals(direction, getDirection);
 	}
 
 	@Test
 	public void UT_PS_IC001() {
+		
 		// ParkingSpot Test Data:
 		int parkingSpot = 5050566;
 		String parkingType = "Student";
@@ -489,7 +611,22 @@ public class ParkingSpotTest {
 	}
 
 	@Test
-	public void testGetParkingType() {
-		fail("Not yet implemented");
+	public void UT_PS_GPT001() {
+		
+		//Preconditions
+		// Parking Spot Test Data
+		int parkingSpot = 5050566;
+		String parkingType = "Student";
+		int floor = 1;
+		String parkingNumber = "150";
+		String direction = "West";
+				
+		psTest = new ParkingSpot(parkingSpot, parkingType, floor, parkingNumber, direction);
+				
+		// Execute:
+		String getParkingTypeTest = psTest.getParkingType();
+				
+		// Assert:
+		assertEquals(parkingType, getParkingTypeTest);
 	}
 }
